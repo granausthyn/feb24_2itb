@@ -1,18 +1,20 @@
-//prototypes
+//call function
 
-function Student(name, section, course){
-    this.name = name;
-    this.section = section;
-    this.course = course;
+let stud1 = {name:"pogi ako", course:"CS", section:"2csb",
+    displayInfo: function() {
+    document.write(`<h2>${this.name}, ${this.course} is enrolled in section ${this.section}`)
+    }
 }
 
-let froilan = new Student("Froila Big Dick", "2 ITB", "IT");
-let gab = new Student("Gab Awesome Boy", "2 ITB", "IT");
+let stud2 = {name:"panget ka", course:"CRS", section:"3pta"};
+let displayInfo = function() {
+    document.write(
+        `<h2>${this.name}, ${this.course} is enrolled in section ${this.section}`
+        )
+    }
 
-Student.prototype.school = "UST";
-Student.prototype.study = function(subject){
-    console.log(`${this.name} is enrolled in ${subject}...`);
-}
 
-//console.log(`${froilan.name} is studying in${froilan.school}`);
-froilan.study("ICS609");
+
+stud1.displayInfo();
+
+displayInfo.call(stud2);

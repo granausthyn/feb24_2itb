@@ -1,20 +1,43 @@
-//static method
+//encapsulation
 
 class Student{
-    constructor(name, course, section){
+    setName(name){
         this.name = name;
-        this.course = course;
+    }
+
+    getName(){
+        return this.name;
+    }
+
+    setSection(section){
         this.section = section;
     }
 
-    static enroll(subject){
-        console.log(`${this.name} is enrolled in ${subject}`)
-    }    
+    getSection(){
+        return this.section;
+    }
+
+    setCourse(course){
+        this.course = course;
+    }
+
+    getCourse(){
+        return this.course;
+    }
+
+    showInfo(){
+        console.log(`${this.name}, ${this.course} is enrroled in section ${this.section}`);
+    }
+
 }
 
+let stud = new Student();
+stud.setName("POGI AKO");
+stud.setCourse("ARKI");
+stud.setSection("2ARKIB");
 
-let stud1 = new Student("Shanen", "PT", "2PTB");
-// object when not static
-//stud1.enroll("Acad Writing");
+//console.log(stud.getName());
+//console.log(stud.getCourse());
+//console.log(stud.getSection());
 
-Student.enroll("Acad Writing");
+stud.showInfo();

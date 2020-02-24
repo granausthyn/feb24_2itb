@@ -1,10 +1,20 @@
-//bind fucntion, hingi ka call function tinamad ka mag code eh gago ka kasi eh HAHAHA
-let stud1 = {fname:"narg", lname:"areved"};
-let stud2 = {fname:"gran", lname:"devera"};
+//static method
 
-let fullName = function (){
-    return this.fname + " " + this.lname;
+class Student{
+    constructor(name, course, section){
+        this.name = name;
+        this.course = course;
+        this.section = section;
+    }
+
+    static enroll(subject){
+        console.log(`${this.name} is enrolled in ${subject}`)
+    }    
 }
 
-let x = fullName.bind(stud1);
-console.log(x());
+
+let stud1 = new Student("Shanen", "PT", "2PTB");
+// object when not static
+//stud1.enroll("Acad Writing");
+
+Student.enroll("Acad Writing");

@@ -11,3 +11,6 @@ function createPerson(name, gender, age){
     p.gender = gender;
     p.age = age;
 }
+
+let gran = createPerson('Gran Austhyn De Vera', 'Male', 20);
+console.log(`${gran.name} is a ${gran.gender} whose age is ${gran.age}`);

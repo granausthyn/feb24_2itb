@@ -1,20 +1,10 @@
-//call function
+//bind fucntion, hingi ka call function tinamad ka mag code eh gago ka kasi eh HAHAHA
+let stud1 = {fname:"narg", lname:"areved"};
+let stud2 = {fname:"gran", lname:"devera"};
 
-let stud1 = {name:"pogi ako", course:"CS", section:"2csb",
-    displayInfo: function() {
-    document.write(`<h2>${this.name}, ${this.course} is enrolled in section ${this.section}`)
-    }
+let fullName = function (){
+    return this.fname + " " + this.lname;
 }
 
-let stud2 = {name:"panget ka", course:"CRS", section:"3pta"};
-let displayInfo = function() {
-    document.write(
-        `<h2>${this.name}, ${this.course} is enrolled in section ${this.section}`
-        )
-    }
-
-
-
-stud1.displayInfo();
-
-displayInfo.call(stud2);
+let x = fullName.bind(stud1);
+console.log(x());
